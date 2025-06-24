@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Upload API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .result {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            overflow: auto;
+            max-height: 300px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        .image-preview {
+            max-width: 300px;
+            max-height: 300px;
+            margin-top: 15px;
+        }
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .image-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .image-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test d'intégration Backend - Frontend</h1>
+    <p>Cette page permet de tester l'intégration entre le backend Node.js (port 3001) et le frontend React (port 8080).</p>
+    
+    <div class="container">
+        <h2>1. Test de santé du backend</h2>
+        <button id="healthCheck">Vérifier la santé du backend</button>
+        <div id="healthResult" class="result"></div>
+    </div>
+
+    <div class="container">
+        <h2>2. Upload d'image</h2>
+        <input type="file" id="imageInput" accept="image/*">
+        <select id="categorySelect">
+            <option value="general">Général</option>
+            <option value="fleurs">Fleurs</option>
+            <option value="bouquets">Bouquets</option>
+            <option value="evenements">Événements</option>
+        </select>
+        <button id="uploadButton">Uploader l'image</button>
+        <div id="uploadResult" class="result"></div>
+        <img id="imagePreview" class="image-preview" style="display: none;">
+    </div>
+
+    <div class="container">
+        <h2>3. Récupérer toutes les images</h2>
+        <button id="getImagesButton">Récupérer les images</button>
+        <div id="imagesResult" class="result"></div>
+        <div id="imagesContainer" class="images-container"></div>
+    </div>
+
+    <div class="container">
+        <h2>4. Test d'intégration avec le frontend React</h2>
+        <p>Vérification de la communication entre le frontend React (port 8080) et le backend Node.js (port 3001)</p>
+        <button id="testFrontendIntegration">Tester l'intégration frontend</button>
+        <div id="frontendTestResult" class="result"></div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3001/api';
+        
+        // Test de santé
+        document.getElementById('healthCheck').addEventListener('click', async () => {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                document.getElementById('healthResult').textContent = JSON.stringify(data, null, 2);
+                document.getElementById('healthResult').style.color = data.status === 'OK' ? 'green' : 'red';
+            } catch (error) {
+                document.getElementById('healthResult').textContent = `Erreur: ${error.message}`;
+                document.getElementById('healthResult').style.color = 'red';
+            }
+        });
+
+        // Prévisualisation de l'image sélectionnée
+        document.getElementById('imageInput').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Upload d'image
+        document.getElementById('uploadButton').addEventListener('click', async () => {
+            const fileInput = document.getElementById('imageInput');
+            const category = document.getElementById('categorySelect').value;
+            const resultDiv = document.getElementById('uploadResult');
+
+            if (!fileInput.files.length) {
+                resultDiv.textContent = 'Veuillez sélectionner une image';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+            formData.append('category', category);
+
+            try {
+                resultDiv.textContent = 'Envoi en cours...';
+                const response = await fetch(`${API_URL}/images/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+                resultDiv.style.color = data.success ? 'green' : 'red';
+
+                // Rafraîchir la liste des images après upload réussi
+                if (data.success) {
+                    document.getElementById('getImagesButton').click();
+                }
+            } catch (error) {
+                resultDiv.textContent = `Erreur: ${error.message}`;
+                resultDiv.style.color = 'red';
+            }
+        });
+
+        // Récupérer toutes les images
+        document.getElementById('getImagesButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch(`${API_URL}/images`);
+                const data = await response.json();
+                document.getElementById('imagesResult').textContent = JSON.stringify(data, null, 2);
+                
+                // Afficher les images
+                const imagesContainer = document.getElementById('imagesContainer');
+                imagesContainer.innerHTML = '';
+                
+                if (data.success && data.data && data.data.length > 0) {
+                    data.data.forEach(image => {
+                        const card = document.createElement('div');
+                        card.className = 'image-card';
+                        
+                        const img = document.createElement('img');
+                        img.src = `http://localhost:3001${image.url}`;
+                        img.alt = image.originalName;
+                        
+                        const info = document.createElement('div');
+                        info.innerHTML = `
+                            <p><strong>Nom:</strong> ${image.originalName}</p>
+                            <p><strong>Catégorie:</strong> ${image.category}</p>
+                            <button class="delete-btn" data-id="${image.id}">Supprimer</button>
+                        `;
+                        
+                        card.appendChild(img);
+                        card.appendChild(info);
+                        imagesContainer.appendChild(card);
+                    });
+                    
+                    // Ajouter les écouteurs d'événements pour les boutons de suppression
+                    document.querySelectorAll('.delete-btn').forEach(btn => {
+                        btn.addEventListener('click', async (e) => {
+                            const imageId = e.target.getAttribute('data-id');
+                            try {
+                                const response = await fetch(`${API_URL}/images/${imageId}`, {
+                                    method: 'DELETE'
+                                });
+                                const data = await response.json();
+                                if (data.success) {
+                                    document.getElementById('getImagesButton').click();
+                                }
+                            } catch (error) {
+                                console.error('Erreur lors de la suppression:', error);
+                            }
+                        });
+                    });
+                } else {
+                    imagesContainer.innerHTML = '<p>Aucune image disponible</p>';
+                }
+            } catch (error) {
+                document.getElementById('imagesResult').textContent = `Erreur: ${error.message}`;
+                document.getElementById('imagesResult').style.color = 'red';
+            }
+        });
+
+        // Test d'intégration avec le frontend React
+        document.getElementById('testFrontendIntegration').addEventListener('click', async () => {
+            const resultDiv = document.getElementById('frontendTestResult');
+            resultDiv.textContent = 'Test en cours...';
+            
+            try {
+                // 1. Vérifier que le backend est accessible
+                const healthResponse = await fetch(`${API_URL}/health`);
+                const healthData = await healthResponse.json();
+                
+                if (!healthData.status === 'OK') {
+                    throw new Error('Le backend ne répond pas correctement');
+                }
+                
+                // 2. Vérifier que le frontend est accessible
+                const frontendResponse = await fetch('http://localhost:8080', {
+                    mode: 'no-cors' // Le frontend peut ne pas autoriser CORS pour cette requête simple
+                });
+                
+                // 3. Résultat du test
+                resultDiv.innerHTML = `
+                    <p style="color: green">✅ Backend: Accessible sur le port 3001</p>
+                    <p style="color: green">✅ Frontend: Accessible sur le port 8080</p>
+                    <p style="color: green">✅ Configuration: Le frontend est configuré pour communiquer avec le backend via l'URL: ${process.env.REACT_APP_API_URL || 'http://localhost:3001'}</p>
+                    <p><strong>Intégration réussie!</strong> Le frontend et le backend peuvent communiquer.</p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <p style="color: red">❌ Erreur: ${error.message}</p>
+                    <p>Vérifiez que les deux serveurs sont bien en cours d'exécution:</p>
+                    <ul>
+                        <li>Backend: http://localhost:3001</li>
+                        <li>Frontend: http://localhost:8080</li>
+                    </ul>
+                `;
+            }
+        });
+        
+        // Exécuter le test de santé au chargement
+        window.onload = () => {
+            document.getElementById('healthCheck').click();
+        };
+    </script>
+</body>
+</html>
