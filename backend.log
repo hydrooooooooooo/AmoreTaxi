@@ -23,123 +23,646 @@
 [GET /api/images] Requête reçue avec les paramètres: {}
 [GET /api/images] Pagination calculée: page=1, limit=20, skip=0
 [GET /api/images] Clause 'where' de Prisma: {}
-[GET /api/images] Nombre total d'images trouvées: 15
-[GET /api/images] 15 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357134317
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357134317' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/auth/me
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
 🔎 GET /api/health
 🔎 GET /api/health
 🔎 GET /api/images
 [GET /api/images] Requête reçue avec les paramètres: {}
 [GET /api/images] Pagination calculée: page=1, limit=20, skip=0
 [GET /api/images] Clause 'where' de Prisma: {}
-[GET /api/images] Nombre total d'images trouvées: 15
-[GET /api/images] 15 images récupérées de la BDD.
-🔎 GET /api/images?category=services_bouquets&_=1751349232682
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', _: '1751349232682' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_bouquets' }, { category: [Object] } ] }
-🔎 GET /api/images?category=services_stand&_=1751349232682
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', _: '1751349232682' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_stand' }, { category: [Object] } ] }
-🔎 GET /api/images?category=services_events&_=1751349232683
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', _: '1751349232683' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_events' }, { category: [Object] } ] }
-🔎 GET /api/images?category=hero&_=1751349232683
-[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', _: '1751349232683' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'hero' }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357134379
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357134379' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/auth/me
 [GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357137745
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357137745' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357137745
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357137745' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357137746
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357137746' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
 [GET /api/images] Nombre total d'images trouvées: 0
-[GET /api/images] Nombre total d'images trouvées: 1
-🔎 GET /api/images?category=creations
-[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'creations' }, { category: [Object] } ] }
-[GET /api/images] 1 images récupérées de la BDD.
-[GET /api/images] Nombre total d'images trouvées: 3
-[GET /api/images] 0 images récupérées de la BDD.
-[GET /api/images] 3 images récupérées de la BDD.
-[GET /api/images] 1 images récupérées de la BDD.
-[GET /api/images] Nombre total d'images trouvées: 8
-[GET /api/images] 8 images récupérées de la BDD.
-🔎 GET /api/images?category=creations
-[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'creations' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 8
-[GET /api/images] 8 images récupérées de la BDD.
-🔎 GET /api/images?category=services_bouquets&_=1751349233583
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', _: '1751349233583' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_bouquets' }, { category: [Object] } ] }
-🔎 GET /api/images?category=services_stand&_=1751349233584
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', _: '1751349233584' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_stand' }, { category: [Object] } ] }
-🔎 GET /api/images?category=services_events&_=1751349233584
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', _: '1751349233584' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_events' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 1
-🔎 GET /api/images?category=creations
-[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'creations' }, { category: [Object] } ] }
-🔎 GET /api/images?category=hero&_=1751349233584
-[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', _: '1751349233584' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'hero' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 0
-[GET /api/images] Nombre total d'images trouvées: 3
-[GET /api/images] Nombre total d'images trouvées: 1
-[GET /api/images] 1 images récupérées de la BDD.
-[GET /api/images] 3 images récupérées de la BDD.
-[GET /api/images] 0 images récupérées de la BDD.
-[GET /api/images] Nombre total d'images trouvées: 8
-[GET /api/images] 1 images récupérées de la BDD.
-[GET /api/images] 8 images récupérées de la BDD.
-🔎 GET /api/serve-image/1751345498261-ac03ee50-bff0-4036-b925-ce80f0209e15-optimized.webp
-💾 Requête pour servir l'image: 1751345498261-ac03ee50-bff0-4036-b925-ce80f0209e15-optimized.webp
-🔎 GET /api/images?category=creations
-[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'creations' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 8
-[GET /api/images] 8 images récupérées de la BDD.
-🔎 GET /api/images?category=creations
-[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'creations' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 8
-[GET /api/images] 8 images récupérées de la BDD.
-🔎 GET /api/images?category=services_bouquets&_=1751349252181
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', _: '1751349252181' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_bouquets' }, { category: [Object] } ] }
-🔎 GET /api/images?category=services_stand&_=1751349252182
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', _: '1751349252182' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_stand' }, { category: [Object] } ] }
-🔎 GET /api/images?category=services_events&_=1751349252182
-[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', _: '1751349252182' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'services_events' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 1
-🔎 GET /api/images?category=hero&_=1751349252183
-[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', _: '1751349252183' }
-[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'hero' }, { category: [Object] } ] }
-[GET /api/images] Nombre total d'images trouvées: 3
+[GET /api/images] Nombre total d'images trouvées: 2
 [GET /api/images] Nombre total d'images trouvées: 0
 🔎 GET /api/images?category=creations
 [GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
 [GET /api/images] Pagination calculée: page=1, limit=20, skip=0
-[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: 'creations' }, { category: [Object] } ] }
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 8
+🔎 GET /api/images?category=hero&limit=1&_=1751357137746
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357137746' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 8 images récupérées de la BDD.
 [GET /api/images] Nombre total d'images trouvées: 1
 [GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357147698
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357147698' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+🔎 GET /api/auth/me
 [GET /api/images] 1 images récupérées de la BDD.
-[GET /api/images] 3 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357153615
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357153615' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357153616
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357153616' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357153616
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357153616' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=hero&limit=1&_=1751357153616
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357153616' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357163861
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357163861' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+🔎 GET /api/auth/me
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357164894
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357164894' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357169016
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357169016' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357169016
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357169016' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 2
+🔎 GET /api/images?category=services_events&limit=1&_=1751357169016
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357169016' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] 0 images récupérées de la BDD.
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 8
+🔎 GET /api/images?category=hero&limit=1&_=1751357169017
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357169017' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 8 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357185042
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357185042' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+🔎 GET /api/auth/me
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357192354
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357192354' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357192354
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357192354' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357192355
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357192355' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=hero&limit=1&_=1751357192355
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357192355' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357280137
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357280137' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/auth/me
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357284602
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357284602' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357284602
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357284602' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357284602
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357284602' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=hero&limit=1&_=1751357284603
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357284603' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 8 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357297437
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357297437' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357297438
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357297438' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357297438
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357297438' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=services_events&limit=1&_=1751357297439
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357297439' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 1 images récupérées de la BDD.
 [GET /api/images] 0 images récupérées de la BDD.
 [GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357302250
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357302250' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357302250
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357302250' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357302250
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357302250' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=hero&limit=1&_=1751357302251
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357302251' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 8 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+🔎 GET /api/auth/me
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357306744
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357306744' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/auth/me
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357351718
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357351718' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357351719
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357351719' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357351719
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357351719' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=hero&limit=1&_=1751357351719
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357351719' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 0
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/health
+🔎 GET /api/health
+🔎 GET /api/images
+[GET /api/images] Requête reçue avec les paramètres: {}
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: {}
+[GET /api/images] Nombre total d'images trouvées: 11
+[GET /api/images] 11 images récupérées de la BDD.
+🔎 GET /api/images?category=hero&limit=1&_=1751357499419
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357499419' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/auth/me
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 1 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357509376
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357509376' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357509376
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357509376' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357509376
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357509376' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=hero&limit=1&_=1751357509377
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357509377' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 2
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 8 images récupérées de la BDD.
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] 8 images récupérées de la BDD.
+🔎 GET /api/images?category=services_bouquets&limit=1&_=1751357530429
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_bouquets', limit: '1', _: '1751357530429' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_stand&limit=1&_=1751357530429
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_stand', limit: '1', _: '1751357530429' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=services_events&limit=1&_=1751357530429
+[GET /api/images] Requête reçue avec les paramètres: { category: 'services_events', limit: '1', _: '1751357530429' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+🔎 GET /api/images?category=hero&limit=1&_=1751357530430
+[GET /api/images] Requête reçue avec les paramètres: { category: 'hero', limit: '1', _: '1751357530430' }
+[GET /api/images] Pagination calculée: page=1, limit=1, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] Nombre total d'images trouvées: 2
+🔎 GET /api/images?category=creations
+[GET /api/images] Requête reçue avec les paramètres: { category: 'creations' }
+[GET /api/images] Pagination calculée: page=1, limit=20, skip=0
+[GET /api/images] Clause 'where' de Prisma: { OR: [ { category: [Object] }, { category: [Object] } ] }
+[GET /api/images] Nombre total d'images trouvées: 1
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 0
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_bouquets'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] 0 images récupérées de la BDD.
+[GET /api/images] 1 images récupérées de la BDD.
+[GET /api/images] Nombre total d'images trouvées: 8
+[GET /api/images] AIDE: Aucune image trouvée pour la catégorie 'services_events'. Catégories disponibles en base de données: [
+  'creations_events',
+  'services_stand',
+  'creations_accessories',
+  'creations_bouquets',
+  'creations_objects',
+  'hero'
+]
 [GET /api/images] 8 images récupérées de la BDD.

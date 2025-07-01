@@ -23,10 +23,10 @@ router.get('/', async (req, res, next) => {
 
     let whereClause = {};
     if (category) {
-      whereClause = {
+            whereClause = {
         OR: [
-          { category: category },
-          { category: { startsWith: `${category}_` } }
+          { category: { equals: category, mode: 'insensitive' } },
+          { category: { startsWith: `${category}_`, mode: 'insensitive' } }
         ]
       };
     }
@@ -45,7 +45,23 @@ router.get('/', async (req, res, next) => {
       }
     });
 
-    console.log(`[GET /api/images] ${images.length} images récupérées de la BDD.`);
+        console.log(`[GET /api/images] ${images.length} images récupérées de la BDD.`);
+
+    // Aide au débogage : si aucune image n'est trouvée pour une catégorie spécifique, lister toutes les catégories disponibles.
+    if (images.length === 0 && category) {
+      try {
+        const distinctCategories = await prisma.image.findMany({
+          select: {
+            category: true,
+          },
+          distinct: ['category'],
+        });
+        const categoryNames = distinctCategories.map(c => c.category);
+        console.log(`[GET /api/images] AIDE: Aucune image trouvée pour la catégorie '${category}'. Catégories disponibles en base de données:`, categoryNames);
+      } catch (dbError) {
+        console.error("[GET /api/images] AIDE: Impossible de récupérer la liste des catégories.", dbError);
+      }
+    }
 
     res.json({
       data: images,
