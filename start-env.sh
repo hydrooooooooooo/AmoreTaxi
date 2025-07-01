@@ -66,19 +66,23 @@ start_backend() {
   local pm=$(detect_package_manager ".")
   echo -e "${CYAN}Using package manager: $pm for backend${NC}"
   
-  # Start server based on package manager
+  # Start server based on package manager, redirecting all output to a log file
+  LOG_FILE="../backend.log"
+  # Ensure the log file is empty before starting
+  > "$LOG_FILE"
+  
   case $pm in
     "npm")
-      npm start &
+      nohup npm start >> "$LOG_FILE" 2>&1 &
       ;;
     "yarn")
-      yarn start &
+      nohup yarn start >> "$LOG_FILE" 2>&1 &
       ;;
     "pnpm")
-      pnpm start &
+      nohup pnpm start >> "$LOG_FILE" 2>&1 &
       ;;
     *)
-      npm start &
+      nohup npm start >> "$LOG_FILE" 2>&1 &
       ;;
   esac
   

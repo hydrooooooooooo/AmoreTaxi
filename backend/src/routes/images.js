@@ -1,32 +1,67 @@
 const express = require('express');
 const upload = require('../middleware/upload');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 const ImageProcessor = require('../utils/imageProcessor');
+const prisma = require('../db/prisma'); // Importer Prisma
 const router = express.Router();
 
-// Base de données simple en mémoire (remplacez par une vraie DB plus tard)
-let images = [];
-
 // GET /api/images - Récupérer toutes les images
-router.get('/', (req, res) => {
-  const { category } = req.query;
-  
-  let filteredImages = images;
-  if (category) {
-    filteredImages = images.filter(img => img.category === category);
+router.get('/', async (req, res, next) => {
+  console.log(`[GET /api/images] Requête reçue avec les paramètres:`, req.query);
+  const { category, page = 1, limit = 20 } = req.query;
+
+  try {
+        const pageNum = parseInt(page, 10);
+    const limitNum = parseInt(limit, 10);
+
+    if (isNaN(pageNum) || isNaN(limitNum) || pageNum <= 0 || limitNum <= 0) {
+      console.error(`[GET /api/images] Paramètres de pagination invalides: page=${page}, limit=${limit}`);
+      return res.status(400).json({ error: 'Paramètres de pagination invalides.' });
+    }
+
+    const skip = (pageNum - 1) * limitNum;
+    console.log(`[GET /api/images] Pagination calculée: page=${pageNum}, limit=${limitNum}, skip=${skip}`);
+
+    let whereClause = {};
+    if (category) {
+      whereClause = {
+        OR: [
+          { category: category },
+          { category: { startsWith: `${category}_` } }
+        ]
+      };
+    }
+
+        console.log(`[GET /api/images] Clause 'where' de Prisma:`, whereClause);
+
+    const totalImages = await prisma.image.count({ where: whereClause });
+    console.log(`[GET /api/images] Nombre total d'images trouvées: ${totalImages}`);
+
+    const images = await prisma.image.findMany({
+      where: whereClause,
+      skip: skip,
+      take: limitNum,
+      orderBy: {
+        uploadedAt: 'desc'
+      }
+    });
+
+    console.log(`[GET /api/images] ${images.length} images récupérées de la BDD.`);
+
+    res.json({
+      data: images,
+      totalPages: Math.ceil(totalImages / limitNum),
+      currentPage: pageNum,
+      totalImages: totalImages
+    });
+  } catch (error) {
+        console.error('[GET /api/images] ERREUR CRITIQUE DANS LE BLOC TRY/CATCH:', error);
+        next(error);
   }
-  
-  res.json({
-    success: true,
-    data: filteredImages
-  });
 });
 
 // POST /api/images/upload - Upload d'une image
 router.post('/upload', upload.single('image'), async (req, res) => {
   console.log('📷 Début du traitement de l\'upload...');
-  console.log('Headers de la requête:', req.headers);
   
   try {
     if (!req.file) {
@@ -39,7 +74,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     
     console.log(`✅ Fichier reçu: ${req.file.originalname} (${req.file.size} octets)`);
 
-    // Traiter l'image avec Sharp pour créer des versions optimisées et miniatures
+    // Traiter l'image avec Sharp
     console.log(`🔄 Traitement de l'image: ${req.file.filename}...`);
     const processedImages = await ImageProcessor.processUploadedImage(req.file);
     console.log('✅ Traitement terminé avec succès');
@@ -48,29 +83,30 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     const serverUrl = `${req.protocol}://${req.get('host')}`;
     
     const imageData = {
-      id: uuidv4(),
+      // uuid est généré automatiquement par la DB
       filename: req.file.filename,
       originalName: req.file.originalname,
-      // Utiliser les URLs absolues pour éviter les problèmes CORS
       url: `${serverUrl}${processedImages.optimized.url}`,
       originalUrl: `${serverUrl}${processedImages.original.url}`,
       thumbnailUrl: `${serverUrl}${processedImages.thumbnail.url}`,
       size: processedImages.optimized.size,
       width: processedImages.optimized.width,
       height: processedImages.optimized.height,
-      mimeType: 'image/webp', // Les images optimisées sont converties en WebP
+      mimeType: 'image/webp',
       category: req.body.category || 'general',
-      uploadedAt: new Date().toISOString()
+      altText: req.body.altText || null
     };
 
-    // Ajouter à la "base de données"
-    images.push(imageData);
-
-    console.log(`✅ Image traitée et uploadée: ${imageData.filename}`);
-
-    res.json({
-      success: true,
+    // Ajouter à la base de données via Prisma
+    const newImage = await prisma.image.create({
       data: imageData
+    });
+
+    console.log(`✅ Image traitée et enregistrée en BDD: ${newImage.filename}`);
+
+    res.status(201).json({
+      success: true,
+      data: newImage
     });
   } catch (error) {
     console.error('Erreur upload:', error);
@@ -81,24 +117,29 @@ router.post('/upload', upload.single('image'), async (req, res) => {
   }
 });
 
-// DELETE /api/images/:id - Supprimer une image
-router.delete('/:id', (req, res) => {
-  const { id } = req.params;
-  const index = images.findIndex(img => img.id === id);
+// DELETE /api/images/:uuid - Supprimer une image par son UUID
+router.delete('/:uuid', async (req, res) => {
+  const { uuid } = req.params;
   
-  if (index === -1) {
-    return res.status(404).json({
+  try {
+    // Optionnel : vous pourriez ajouter ici la logique pour supprimer les fichiers physiques du serveur
+    
+    await prisma.image.delete({
+      where: { uuid }
+    });
+    
+    res.json({
+      success: true,
+      message: 'Image supprimée avec succès'
+    });
+  } catch (error) {
+    console.error(`Erreur lors de la suppression de l'image ${uuid}:`, error);
+    // Erreur P2025 de Prisma est levée si l'enregistrement n'est pas trouvé
+    res.status(404).json({ 
       success: false,
-      error: 'Image non trouvée'
+      error: 'Image non trouvée ou erreur lors de la suppression'
     });
   }
-  
-  images.splice(index, 1);
-  
-  res.json({
-    success: true,
-    message: 'Image supprimée'
-  });
 });
 
 module.exports = router;

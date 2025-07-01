@@ -13,10 +13,11 @@ dotenv.config();
 
 // Créer l'application Express
 const app = express();
-const PORT = process.env.PORT || 3001;
+// Forcer le port 3000 pour garantir la cohérence avec le frontend
+const PORT = 3000;
 
 // Base de données simple en mémoire pour stocker les images
-let images = [];
+// let images = []; // Remplacé par la base de données Prisma
 
 // Middleware de sécurité
 app.use(helmet({
@@ -80,6 +81,11 @@ app.use('/uploads', (req, res, next) => {
 app.use('/api/images', require('./routes/images'));
 app.use('/api/categories', require('./routes/categories'));
 app.use('/api/instagram', require('./routes/instagram'));
+app.use('/api/events', require('./routes/events'));
+app.use('/api/contact-messages', require('./routes/contactMessages'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/email-config', require('./routes/emailConfig'));
+app.use('/api/expenses', require('./routes/expenses'));
 
 // Route spéciale pour servir les images via l'API avec CORS appropriés
 app.get('/api/serve-image/:filename', (req, res) => {
@@ -127,23 +133,6 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Redirection de l'ancienne route d'upload vers la nouvelle
-app.post('/images/upload', (req, res) => {
-  console.log('📷 Redirection de /images/upload vers /api/images/upload');
-  // Rediriger vers le bon endpoint
-  res.redirect(307, '/api/images/upload');
-});
-
-// Route de test pour vérifier que le serveur fonctionne
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
-    message: 'Le serveur fonctionne correctement!',
-    timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
-  });
-});
-
 // Route racine pour vérifier que le serveur fonctionne (alternative)
 app.get('/', (req, res) => {
   res.json({ 
@@ -158,25 +147,25 @@ app.get('/test-upload', (req, res) => {
   res.sendFile(path.join(__dirname, '../test-upload.html'));
 });
 
-// Middleware de gestion des erreurs
-app.use((err, req, res, next) => {
-  console.error('Erreur serveur:', err.stack);
-  res.status(500).json({
-    success: false,
-    error: 'Erreur serveur interne',
-    message: process.env.NODE_ENV === 'development' ? err.message : undefined
-  });
-});
-
-// Middleware pour les routes non trouvées
-app.use((req, res) => {
+// Middleware pour les routes non trouvées (404)
+// Ce middleware doit être placé après toutes les autres routes.
+app.use((req, res, next) => {
   res.status(404).json({
     success: false,
-    error: 'Route non trouvée'
+    error: `Route non trouvée: ${req.method} ${req.originalUrl}`
   });
 });
 
-// Démarrage du serveur
+// Gestionnaire d'erreurs global
+// Ce middleware doit être le tout dernier middleware `app.use`.
+app.use((err, req, res, next) => {
+  console.error('❌ Erreur non gérée:', err.stack);
+  res.status(500).json({ 
+    error: 'Une erreur interne est survenue sur le serveur.',
+    message: process.env.NODE_ENV === 'development' ? err.message : err.toString()
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`
 ✨ Serveur démarré sur http://localhost:${PORT}
@@ -192,4 +181,5 @@ app.listen(PORT, () => {
   - DELETE /api/categories/:id - Supprimer une catégorie
   - GET /api/instagram - Récupérer les posts Instagram
   - GET /test-upload - Page de test HTML
-`);});
+`);
+});
